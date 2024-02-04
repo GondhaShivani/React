@@ -1,3 +1,5 @@
+/* 
+
 //async/await is a feature introduced in ECMAScript 2017 (ES8) that simplifies asynchronous code in JavaScript. It allows you to write asynchronous code in a more synchronous-like manner, making it easier to read and maintain.
 
 //Here's a basic overview of async/await:
@@ -54,3 +56,26 @@ async function parallelExample() {
 }
 
 //async/await is particularly useful when dealing with Promises, making the code more readable and maintaining the benefits of asynchronous programming. It's important to note that async/await is syntactic sugar over promises and does not replace them; rather, it provides a more convenient syntax for working with asynchronous operations.
+
+
+ */
+//from video
+/* 
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+console.log("shivani");
+ */
+async function getToDo() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  console.log("hellooooo");
+  const data = await res.json();
+  console.log(data);
+
+  return data;
+}
+
+const todo = getToDo();
+console.log(todo);
+console.log("hello");

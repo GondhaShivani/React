@@ -15,7 +15,7 @@ console.log(numbers); // Original array is unchanged: [1, 2, 3, 4, 5]
 
 //In this example:
 
-//The reduce() method is called on the numbers array.
+//The reduce()  method is called on the numbers array.
 
 //The arrow function (accumulator, currentValue) => accumulator + currentValue is applied to each element of the array. The accumulator is the accumulated result, and currentValue is the current element being processed.
 
