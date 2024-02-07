@@ -76,6 +76,26 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
+
+      <ul className="pizzas">
+        {pizzaData.map((pizza) => (
+          <Pizza pizzaObj={pizza} key={pizza.name} />
+        ))}
+      </ul>
+      {/*
+
+
+<div>: This is an HTML-like tag representing a container element in the React component. It's used to group and structure other elements within it.
+
+{pizzaData.map((pizza) => ( ... ))}: This is a JavaScript expression enclosed in curly braces {}. It's used to dynamically generate elements based on the pizzaData array.
+
+pizzaData.map((pizza) => ( ... )): This is the map() method applied to the pizzaData array. The map() method iterates over each element in the array and applies a function to each element. In this case, the function takes each pizza object from the pizzaData array.
+
+<Pizza pizzaObj={pizza} />: Inside the map() function, for each pizza object in the array, a <Pizza> component is rendered. This component is passed the pizza object as a prop named pizzaObj.
+ 
+ 
+*/}
+      {/* 
       <Pizza
         name="Pizza Prosciutto"
         ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
@@ -87,7 +107,8 @@ function Menu() {
         ingredients="Tomato, mozarella, mushrooms, and onion"
         price={100}
         photoName="pizzas/funghi.jpg"
-      />
+      /> 
+      */}
     </main>
   );
 }
@@ -95,14 +116,14 @@ function Menu() {
 function Pizza(props) {
   //console.log(props);
   return (
-    <div className="pizza">
-      <img src={props.photoName} alt={props.name} />
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
-        <span>Price : {props.price + 99} Rs.</span>
+        <h3>{props.pizzaObj.name}</h3>
+        <p>{props.pizzaObj.ingredients}</p>
+        <span>Price : {props.pizzaObj.price + 99} Rs.</span>
       </div>
-    </div>
+    </li>
   );
 }
 
